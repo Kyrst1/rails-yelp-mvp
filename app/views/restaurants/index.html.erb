@@ -1,18 +1,18 @@
-
-<div class="main">
-  <h1>Restaurants</h1>
-    <div class="wrapper">
-      <ul>
-       <% @restaurants.each do |restaurant| %>
-        <li> 
-          <%= link_to restaurant.name, restaurant_path(restaurant.id) %>
-        </li>
-       <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>All restaurants</h1>
+      <ul class="list-group">
+        <% @restaurants.each do |restaurant| %>
+          <li class="list-group-item">
+            <%= link_to restaurant.name, restaurant_path(restaurant) %>
+          </li>
+        <% end %>
       </ul>
-    </div>
-    
-    <%= link_to new_restaurant_path do %>
-      <i class="fa fa-plus"></i> Add a new restaurant
-    <% end %>
 
+        <%= link_to new_restaurant_path do %>
+        <i class="fa fa-plus"></i> Add a new restaurant
+      <% end %>
+     </div>
+  </div>
 </div>
